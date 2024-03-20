@@ -1,0 +1,119 @@
+﻿@page
+@model Wera_Sentry.Pages.Products.CreateModel
+@{
+}
+
+
+<br>
+<h2>New Product</h2>
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade-show" role="alert">
+		<strong>
+			@Model.errorMessage
+		</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+	</div>
+
+}
+
+
+
+
+<form method="post">
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">BARCODE</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="BARCODE" value="@Model.productInfo.BARCODE">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">CATEGORY_ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="CATEGORY_IDs" value="@Model.productInfo.CATEGORY_IDs">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">PRODUCT_NAME</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="PRODUCT_NAME" value="@Model.productInfo.PRODUCT_NAME">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">UNIT OF MEASURE</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="unit_Of_measure" value="@Model.productInfo.unit_Of_measure">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">PRODUCT_QUANTITY</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="PRODUCT_QUANTITY" value="@Model.productInfo.PRODUCT_QUANTITY">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">PRODUCT_DESCRIPTION</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="PRODUCT_DESCRIPTION" value="@Model.productInfo.PRODUCT_DESCRIPTION">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">SUPPLIER_IDs</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="SUPPLIER_IDs" value="@Model.productInfo.SUPPLIER_IDs">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">SUPPLIER_NAME</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="SUPPLIER_NAME" value="@Model.productInfo.SUPPLIER_NAME">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">RE ORDER POINT</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="re_order_point" value="@Model.productInfo.re_order_point">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">Cost Price</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="costPrice" value="@Model.productInfo.costPrice">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">Selling Price</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="sellingPrice" value="@Model.productInfo.sellingPrice">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class=" col-sm-3 col-form-label">Profit Percentage</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="profitPercentage" value="@Model.productInfo.profitPercentage">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+
+		</div>
+
+	</div>
+	@if (Model.successMessage.Length > 0)
+	{
+		<div class="alert alert-success alert-dismissible fade-show" role="alert">
+			<strong>
+				@Model.successMessage
+			</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+		</div>
+
+	}
+
+</form>

@@ -1,0 +1,55 @@
+﻿@page
+@model Wera_Sentry.Pages.Products.IndexModel
+@{
+}
+
+
+<br>
+<h2>List of Products</h2>
+<a class="btn btn-primary btn-sm" href="/Products/Create/">New Product</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>BARCODE</th>
+			<th>CATEGORY_ID</th>
+			<th>PRODUCT_NAME</th>
+			<th>UNIT_OF_MEASURE</th>
+			<th>PRODUCT_QUANTITY</th>
+			<th>PRODUCT_DESCRIPTION</th>
+			<th>SUPPLIER_ID</th>
+			<th>SUPPLIER_NAME</th>
+			<th>RE_ORDER_POINT</th>
+			<th>COST_PRICE</th>
+			<th>SELLING_PRICE</th>
+			<th>PROFIT_PERCENTAGE</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach(var item in Model.listProducts)
+		{
+			<tr>
+				<td>@item.BARCODE</td>
+				<td>@item.CATEGORY_IDs</td>
+				<td>@item.PRODUCT_NAME</td>
+				<td>@item.unit_Of_measure</td>
+				<td>@item.PRODUCT_QUANTITY</td>
+				<td>@item.PRODUCT_DESCRIPTION</td>
+				<td>@item.SUPPLIER_IDs</td>
+				<td>@item.SUPPLIER_NAME</td>
+				<td>@item.re_order_point</td>
+				<td>@item.costPrice</td>
+				<td>@item.sellingPrice</td>
+				<td>@item.profitPercentage</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Products/Edit?id=@item.BARCODE">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Products/Delete?id=@item.BARCODE">Delete</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+
+</table>

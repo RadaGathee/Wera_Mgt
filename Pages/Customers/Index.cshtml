@@ -1,0 +1,44 @@
+﻿@page
+@model Wera_Sentry.Pages.Customers.IndexModel
+@{
+}
+
+<br>
+<h2>List of Customers</h2>
+<a class="btn btn-primary btn-sm" href="/Customers/Create/">New Customer</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>customerId</th>
+			<th>name</th>
+			<th>contactNumber</th>
+			<th>email</th>
+			<th>address</th>
+			<th>createdAt</th>
+			<th>updatedAt</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach(var item in Model.listCustomers)
+		{
+			<tr>
+				<td>@item.customerId</td>
+				<td>@item.name</td>
+				<td>@item.contactNumber</td>
+				<td>@item.email</td>
+				<td>@item.address</td>
+				<td>@item.createdAt</td>
+				<td>@item.updatedAt</td>
+				<td> 
+					<a class="btn btn-primary btn-sm" href="/Customers/Edit?id=@item.customerId">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Customers/Delete?id=@item.customerId">Delete</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+
+</table>

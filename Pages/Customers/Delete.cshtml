@@ -1,0 +1,30 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+	try
+	{
+		string customerId = Request.Query["id"];
+
+
+
+		String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=mystore;Integrated Security=True";
+		using (SqlConnection connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+
+			String sql = "DELETE FROM customer WHERE customerId=@customerId";
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.AddWithValue("@customerId", customerId);
+				command.ExecuteNonQuery();
+			}
+		}
+
+	}
+	catch (Exception ex)
+	{
+		
+	}
+
+	Response.Redirect("/Customers/Index");
+}
